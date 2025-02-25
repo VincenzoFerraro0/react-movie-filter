@@ -11,11 +11,26 @@ const initialMovies = [
 
 function App() {
   const [movies] = useState(initialMovies);
-  
+  const [search, setSearch] = useState("");
+
+
+
   return (
     <>
       <div className="container mt-5 w-50">
         <h1>Film</h1>
+
+        {/* Input per la ricerca */}
+        <div>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Cerca film"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+
       </div>
       {/* Lista dei film filtrati */}
       <ul className="list-group mt-3">
